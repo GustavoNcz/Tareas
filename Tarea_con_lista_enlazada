@@ -1,1 +1,94 @@
-sss
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int val;
+    struct node *next;
+};
+
+void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) HASTA EL NUMERO ESPESIFICADO 
+{
+    struct node *prev, *cur;
+    head -> val = 1;
+    int i;
+    prev = head;
+    for(i=2;i<= n;i++)
+    {
+        cur = malloc(sizeof(struct node));
+        cur ->val = i;
+        prev ->next = cur;
+        prev = cur;
+    }
+    prev -> next=NULL;
+
+}
+
+void InsertPrinc(struct node *head, int a)
+{
+    head -> val = a;
+}
+
+void InsertMitad(struct node *head, int a, int b)
+{
+    while(head -> val != b)
+    {
+        head = head -> next;
+    }
+    head -> val = a;
+}
+
+struct node* InsertOrden(struct node *head, int a)
+{
+    struct node *u,*s;
+    u=head;
+    while(u->val<a && u->next != NULL )
+    {
+        s=u;
+        u=u->next;
+    }
+    struct node *r;
+    r=malloc(sizeof(struct node));
+    r->val = a;
+    r->next=NULL;
+    if(u==head){
+        r->next=head;
+        return r;
+    }
+    else if(u->next==NULL){
+        u->next=r;
+        return head;
+    }
+    else{
+        s->next=r;
+        r->next=u;
+        return head;
+    }
+}
+
+void imprimir(struct node *head)
+{
+    struct node *t;
+    t=head;
+    while (t!=NULL)
+    {
+        printf("%d\n",t->val);
+        t = t -> next;
+    }
+}
+
+main()
+{
+    struct node *head;
+    head = malloc(sizeof(struct node));
+    head -> val = 1;
+    crearList(head,6);
+
+    InsertPrinc(head,7);    // EL VALOR 7 SE VA A INSERTAR EN LA PRIMERA POSICION 
+    InsertMitad(head,6,3);    // INSERTA EL VALOR 6 EN LA POSICION 3
+    head=InsertOrden(head,3);   // EL VALOR 3 SE VA A INSERTAR EN UN ORDEN ESPEFICICO
+    imprimir(head);   // VA A IMPRIMIR LA LISTA
+    
+    
+    
+    }
