@@ -7,7 +7,7 @@ struct node
     struct node *next;
 };
 
-void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) HASTA EL NUMERO ESPESIFICADO 
+void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) HASTA EL NUMERO ESPESIFICADO
 {
     struct node *prev, *cur;
     head -> val = 1;
@@ -24,7 +24,7 @@ void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) 
 
 }
 
-void InsertPrinc(struct node *head, int a)      // INSERTA EL VALOR EN LA PRIMERA POSICION 
+void InsertPrinc(struct node *head, int a)      // INSERTA EL VALOR EN LA PRIMERA POSICION
 {
     head -> val = a;
 }
@@ -66,6 +66,19 @@ struct node* InsertOrden(struct node *head, int a)      // INSERTA UN VALOR EN S
     }
 }
 
+void concatenar(struct node *head,struct node *cabeza)
+{
+    struct node *temp=head;
+    temp=head;
+    for(;temp->next!=NULL;temp=temp->next)
+    {
+
+    }
+    temp->next=cabeza;
+
+}
+
+
 void imprimir(struct node *head)        // IMPRIME LA LISTA
 {
     struct node *t;
@@ -79,16 +92,21 @@ void imprimir(struct node *head)        // IMPRIME LA LISTA
 
 main()
 {
-    struct node *head;
+    struct node *head,*cabeza;      
     head = malloc(sizeof(struct node));
     head -> val = 1;
-    crearList(head,6);
+    cabeza = malloc(sizeof(struct node));
+    cabeza -> val = 1;
+    crearList(head,6);      // CREA LA LISTA 1
+    crearList(cabeza,8);        / CREA LA LISTA 2
 
-    InsertPrinc(head,7);    // EL VALOR 7 SE VA A INSERTAR EN LA PRIMERA POSICION 
-    InsertMitad(head,6,3);    // INSERTA EL VALOR 6 EN LA POSICION 3
-    head=InsertOrden(head,3);   // EL VALOR 3 SE VA A INSERTAR EN UN ORDEN ESPEFICICO
-    imprimir(head);   // VA A IMPRIMIR LA LISTA
-    
-    
-    
+    //InsertPrinc(head,7);    // EL VALOR 7 SE VA A INSERTAR EN LA PRIMERA POSICION
+    //InsertMitad(head,6,3);    // INSERTA EL VALOR 6 EN LA POSICION 3
+    //head=InsertOrden(head,3);   // EL VALOR 3 SE VA A INSERTAR EN UN ORDEN ESPEFICICO
+    imprimir(head);         // VA A IMPRIMIR LA LISTA 1
+    printf("\n");
+    imprimir(cabeza);        // // VA A IMPRIMIR LA LISTA 2
+    printf("\n");
+    concatenar(head,cabeza);        // CONCATENA LAS DOS LISTAS
+    imprimir(head);     // IMPRIME LA LISTA 1 CONCATENADA CON LA LISTA 2
     }
