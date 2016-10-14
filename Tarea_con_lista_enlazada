@@ -38,7 +38,7 @@ void InsertMitad(struct node *head, int a, int b)       // INSERTA EL VALOR EN L
     head -> val = a;
 }
 
-struct node* InsertOrden(struct node *head, int a)
+struct node* InsertOrden(struct node *head, int a)      // INSERTA UN VALOR EN SU RESPECTIVO ORDEN NUMERAL
 {
     struct node *u,*s;
     u=head;
@@ -66,7 +66,7 @@ struct node* InsertOrden(struct node *head, int a)
     }
 }
 
-void imprimir(struct node *head)
+void imprimir(struct node *head)        // IMPRIME LA LISTA
 {
     struct node *t;
     t=head;
