@@ -66,9 +66,9 @@ struct node* InsertOrden(struct node *head, int a)      // INSERTA UN VALOR EN S
     }
 }
 
-void concatenar(struct node *head,struct node *cabeza)
+void concatenar(struct node *head,struct node *cabeza)      // CONCATENA LAS DOS LISTAS
 {
-    struct node *temp=head;
+    struct node *temp=head;     // VARIABLE TEMPORAL QUE VA A RECORRER TODA LA LISTA 1 LUEGO EL FINAL SERA LA CABEZA DE LA LISTA 2
     temp=head;
     for(;temp->next!=NULL;temp=temp->next)
     {
@@ -98,7 +98,7 @@ main()
     cabeza = malloc(sizeof(struct node));
     cabeza -> val = 1;
     crearList(head,6);      // CREA LA LISTA 1
-    crearList(cabeza,8);        / CREA LA LISTA 2
+    crearList(cabeza,8);        // CREA LA LISTA 2
 
     //InsertPrinc(head,7);    // EL VALOR 7 SE VA A INSERTAR EN LA PRIMERA POSICION
     //InsertMitad(head,6,3);    // INSERTA EL VALOR 6 EN LA POSICION 3
