@@ -24,12 +24,12 @@ void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) 
 
 }
 
-void InsertPrinc(struct node *head, int a)
+void InsertPrinc(struct node *head, int a)      // INSERTA EL VALOR EN LA PRIMERA POSICION 
 {
     head -> val = a;
 }
 
-void InsertMitad(struct node *head, int a, int b)
+void InsertMitad(struct node *head, int a, int b)       // INSERTA EL VALOR EN LA POSICION ESPESIFICA
 {
     while(head -> val != b)
     {
