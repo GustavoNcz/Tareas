@@ -1,0 +1,4 @@
+implemente la clase Point : constructores -> point (point&)
+                                          -> point () inicia los valores en 00
+                                          -> point (x,y)
+                                          
