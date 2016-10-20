@@ -2,3 +2,47 @@ implemente la clase Point : constructores -> point (point&)
                                           -> point () inicia los valores en 00
                                           -> point (x,y)
                                           
+#ifndef POINT_H
+#define POINT_H
+
+
+class point
+{
+    private:
+        int x,y;
+
+    public:
+        point(int x1=0,int y1=0):x(x1),y(y1){}
+        void getX();
+        void getY();
+        void setX();
+        void setY();
+
+};
+
+#endif // POINT_H
+
+
+#include "point.h"
+
+
+point::getX() const
+{
+    return x;
+}
+
+point::getY() const
+{
+    return y;
+}
+
+point::setX() const
+{
+    return x;
+}
+
+point::setY() const
+{
+    return y;
+}
+
