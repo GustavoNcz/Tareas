@@ -7,7 +7,24 @@ struct node
     struct node *next;
 };
 
-void InsertPrinc(struct node *head, int a,int pos)      // INSERTA EL VALOR EN LA PRIMERA POSICION
+void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) HASTA EL NUMERO ESPESIFICADO
+ {
+     struct node *prev, *cur;
+     head -> val = 1;
+     int i;
+     prev = head;
+     for(i=2;i<= n;i++)
+     {
+         cur = malloc(sizeof(struct node));
+         cur ->val = i;
+         prev ->next = cur;
+         prev = cur;
+     }
+     prev -> next=NULL;
+
+ }
+
+void numEspecifico(struct node *head, int a,int pos)      // INSERTA EL VALOR EN LA POSICION INGRESADA
 {
     struct node *n,*prev;
     int i;
@@ -96,14 +113,14 @@ void imprimir(struct node *head)        // IMPRIME LA LISTA
 
 main()
 {
-    struct node *head,*cabeza;      
+    struct node *head,*cabeza;
     head = malloc(sizeof(struct node));
     head -> val = 1;
     cabeza = malloc(sizeof(struct node));
     cabeza -> val = 1;
     crearList(head,6);      // CREA LA LISTA 1
     crearList(cabeza,8);        // CREA LA LISTA 2
-
+    numEspecifico(head,6,3);
     //InsertPrinc(head,7);    // EL VALOR 7 SE VA A INSERTAR EN LA PRIMERA POSICION
     //InsertMitad(head,6,3);    // INSERTA EL VALOR 6 EN LA POSICION 3
     //head=InsertOrden(head,3);   // EL VALOR 3 SE VA A INSERTAR EN UN ORDEN ESPEFICICO
