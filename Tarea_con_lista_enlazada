@@ -24,6 +24,16 @@ void crearList(struct node *head, int n)    // CREA LA LISTA DESDE LA CABEZA(1) 
 
  }
 
+void agregar(struct node *head, int x)
+{
+    struct node *temp;
+    temp=malloc(sizeof(struct node));
+    temp->val=x;
+    temp->next=head;
+    return temp;
+
+}
+
 void numEspecifico(struct node *head, int a,int pos)      // INSERTA EL VALOR EN LA POSICION INGRESADA
 {
     struct node *n,*prev;
